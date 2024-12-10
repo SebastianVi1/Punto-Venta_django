@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block css-styles %}
+<link rel="stylesheet" href="{% static 'core/css/confirm_delete-style.css' %}">
+{% endblock css-styles %}
+{% block content %}
+<div class="main-box">
+    <h2>Confirmar Borrado</h2>
+    <p>¿Estás seguro de que deseas borrar al usuario <strong>{{ user.username }}</strong>?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn-confirmar">Sí, borrar</button>
+        <a href="{% url 'users' %}" class="btn-cancelar">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

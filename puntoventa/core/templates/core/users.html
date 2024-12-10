@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+<!-- ETIQUETA DE TITULO -->
+{% block title %}
+Usuarios
+{% endblock %}
+
+<!-- ETIQUETA DE CSS -->
+
+ {% block css-styles %}
+  <link rel="stylesheet" href="{% static 'core/css/users-style.css' %}">
+ {% endblock css-styles %}
+
+ {% block content %}
+<div class="main-box">
+    <h2>Usuarios</h2>
+    <table class="users-table">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Administrador</th>
+                <th>Fecha de Registro</th>
+                <th>Borrar user</th> <!-- Nueva columna -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.username }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.first_name }}</td>
+                <td>{{ usuario.last_name }}</td>
+                <td>{{ usuario.is_staff|yesno:"Sí,No" }}</td>
+                <td>{{ usuario.date_joined|date:"Y-m-d H:i" }}</td>
+                <td>
+                    <!-- Botón para borrar al usuario -->
+                    <a href="{% url 'delete_user' usuario.id %}" class="btn-borrar" >
+                        Borrar
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'register_user' %}" class="btn-agregar">Registrar Nuevo Usuario</a>
+</div>
+{% endblock %}

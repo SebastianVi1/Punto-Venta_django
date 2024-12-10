@@ -1,0 +1,151 @@
+body{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    box-sizing: border-box;
+    min-height: 100vh;
+    
+}
+body,html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+* {
+    box-sizing: border-box;
+}
+   /* -----BARRA DE NAVEGACION----- */
+
+header{
+    width: 100%;
+    position: relative;
+    order: 2;
+    box-shadow: 0px 0px 10px #000;
+    
+}
+.main-wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #48e;
+    padding: 0 30px;
+    align-items: center;
+    
+    
+}
+.contenedor-izquerdo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+}
+
+.nav__logo-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-wrap: balance;
+    
+}
+.nav__list {
+    display:flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    flex: 1;
+    outline: #000;
+    transition: background-color 0.24s;
+    
+}
+
+.nav__link:hover{
+    background-color: #0005;
+    border-radius: 8px;
+    
+}
+
+.nav__logo{
+    width: 60px;
+    min-height: auto;
+    margin: 3px 0;
+}
+.link--login {
+    background-color: #ccc;
+    border-radius: 8px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    box-shadow: 0px 0px 5px #000;
+    
+}
+.label-menu {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 40px;
+}
+#checkbox {
+    
+   
+    display: none;
+    
+}
+/* ----MENU LATERAL----- */
+aside {
+    padding: 0;
+    margin: 0;
+    max-width: 25%;
+    min-width: 240px;
+    background-color: #444;
+    height: 800vh;
+    box-shadow: 0px 0px 10px #000;
+    
+    
+}
+.menu-lateral__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+.menu-lateral__items:hover {
+    border-left: 3px solid #fff;
+    padding-left: 25px;
+
+}
+.menu-lateral__items:active{
+    border-left: 3px solid #fff;
+    padding-left: 25px;
+}
+.menu-lateral__items {
+    padding: 20px;
+}
+.menu-lateral__links {
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+.main-content{
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto;
+}
+/* -----FIN MENU LATERAL----- */
+
+/* MEDIA QUERIS */

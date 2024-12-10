@@ -1,0 +1,143 @@
+
+body {
+  background-color: #F1F0E8;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat',sans-serif;
+}
+aside {
+  display: none;
+}
+
+.nav__list {
+  display: none;
+}
+/* Estilo para el contenedor principal */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  
+}
+
+/* Estilo para el título del formulario */
+.form_title h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0px;
+  text-wrap: balance;
+}
+
+/* Estilo para el formulario */
+.form_login {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 40px;
+  padding: 40px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px #000;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Estilo para los inputs */
+.form_login input {
+  width: 100%;
+  padding: 12px;
+  margin: 5px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px #0004;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  outline: none;
+}
+
+/* Estilo para los inputs */
+
+
+.form_login input:focus {
+  border-color: #4d90fe;
+  box-shadow: 0 0 5px rgba(77, 144, 254);
+  outline: none;
+}
+
+/* Estilo para el input de tipo password */
+.form_login input[type="password"] {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Estilo para el botón de inicio de sesión */
+
+
+.btn-login  {
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  outline: 1px solid #48e;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: 600;
+  outline: 1px solid #48e;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: 600;
+  outline: 1px solid #48e;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  filter: drop-shadow(0px 0px 2px #000);
+  transition: background-color 0.5s;
+}
+
+
+
+.btn-login:hover {
+  border: none;
+  background-color: #48e;
+  color: #fff;
+
+
+}
+
+
+
+input + ul {
+  list-style: none;
+  
+}
+ul + li {
+  text-wrap: pretty;
+}
+
+/* Estilo para el mensaje de error o éxito debajo del formulario */
+.form_login .error, .form_login .success {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-wrap: balance;
+}
+
+/* Estilo para enlaces, como "Olvidé mi contraseña" */
+.form_login a {
+  color: #0078d4;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.form_login a:hover {
+  text-decoration: underline;
+}

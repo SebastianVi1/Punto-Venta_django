@@ -1,0 +1,63 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+Reporte de Ventas
+{% endblock %}
+
+{% block css-styles %}
+<link rel="stylesheet" href="{% static 'core/css/reporte-ventas-style.css' %}">
+{% endblock css-styles %}
+
+{% block content %}
+<div class="main-box">
+    <h2 class="title-products">Reporte de Ventas</h2>
+
+    <div class="table-container">
+        {% for venta_id, venta in ventas_agrupadas.items %}
+        <h3>Venta: #{{ venta_id }}</h3>
+        <table class="ticket-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Total por Producto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in venta.items %}
+                <tr>
+                    <td>{{ item.producto.nombre }}</td>
+                    <td>{{ item.cantidad }}</td>
+                    <td>${{ item.precio_unitario }}</td>
+                    <td>${{ item.total_por_producto }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="3" class="text-right"><strong>Total General</strong></td>
+                    <td><strong>${{ venta.total_general }}</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right"><strong>Monto Pagado</strong></td>
+                    <td><strong>${{ venta.monto_pagado }}</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right"><strong>Cambio</strong></td>
+                    <td><strong>${{ venta.cambio }}</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right"><strong>Fecha</strong></td>
+                    <td><strong>{{ venta.fecha }}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        {% endfor %}
+    </div>
+
+    <form method="POST" action="{% url 'eliminar_todas_ventas' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn-restart">Eliminar Todos los Reportes de Ventas</button>
+    </form>
+</div>
+{% endblock %}

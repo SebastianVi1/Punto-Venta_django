@@ -1,0 +1,73 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+<!-- ETIQUETA DE TITULO -->
+{% block title %}
+Productos
+{% endblock %}
+
+<!-- ETIQUETA DE CSS -->
+
+ {% block css-styles %}
+  <link rel="stylesheet" href="{% static 'core/css/register-style.css' %}">
+ {% endblock css-styles %}
+
+
+
+{% block content %}
+<div class="register-box">
+    <h2 class="title_register">Registrar usuario</h2>
+    <form method="post" class="form_register" action="{% url 'register_user' %}">
+        {% csrf_token %}
+        
+        {% if form.errors %}
+            <div class="error-messages">
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <li>{{ field }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        
+        <div class="form-group">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </div>
+        <div class="form-group">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+        </div>
+        <div class="form-group">
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+        </div>
+        <div class="form-group">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+        </div>
+        <div class="form-group">
+            {{ form.confirm_password.label_tag }}
+            {{ form.confirm_password }}
+        </div>
+        <div class="form-group">
+            {{ form.phone.label_tag }}
+            {{ form.phone }}
+        </div>
+        <div class="form-group --checkbox">
+            {{ form.es_admin.label_tag }}
+            {{ form.es_admin }}
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

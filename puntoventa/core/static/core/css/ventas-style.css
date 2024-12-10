@@ -1,0 +1,149 @@
+body, html {
+    background-color: #F1F0E8;
+    height: 100%;
+}
+
+.main-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    overflow-y: auto;
+    height: calc(100vh - 89px);
+}
+
+.main-box {
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0px 0px 10px #000;
+    min-width: 40%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-container {
+    max-width: 750px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.title-products {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container label {
+    display: block;
+    width: 100%;
+    padding: 6px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 6px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #0006;
+    border-left: 2px solid #0006;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.btn-agregar {
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    outline: 3px solid #48e;
+    width: 100%;
+    margin-top: 40px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    filter: drop-shadow(0px 0px 2px #000);
+}
+
+.btn-agregar:hover {
+    border: none;
+    background-color: #48e;
+    color: #fff;
+}
+
+.form__textarea {
+    display: flex;
+    width: 100%;
+    padding: 6px;
+    border: 2px solid #000;
+    resize: vertical;
+    min-width: 100%;
+    min-height: 40px;
+    max-height: 80px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.users-table th, .users-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.users-table th {
+    background-color: #48e;
+    color: white;
+    text-align: left;
+}
+
+.users-table td {
+    background-color: #fff;
+    color: #333;
+}
+
+.users-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.users-table tr:hover {
+    background-color: #ddd;
+}
+
+.error_mensaje {
+    width: 300px;
+    height: 100px;
+    background-color: #444;
+}
+
+/* --------Estilo sugerencias de busqueda-------- */
+
+.sugerencias {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1000;
+    border-radius: 10px;
+    margin-top: 5px;
+    
+
+}
+
+
+.sugerencia-item {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: start;
+}
+
+.sugerencia-item:hover {
+    background-color: #bbb;
+}

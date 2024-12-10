@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+        
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %} |PV</title>
+    
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--  CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/base-style.css' %}">
+    {% block css-styles %}{% endblock css-styles %}
+
+    <link rel="icon" href="{% static 'core/imagenes/icono-web.png' %}" type="image/png">
+    
+</head>
+<body>
+
+    <header>
+        <nav class="nav">
+            <div class="contenedor-izquerdo">
+                
+                <div class="nav__logo-container">
+                    <img class="nav__logo" src="{% static 'core/imagenes/logo.png' %}" alt="">
+                </div>
+                <h3>Las palmas</h3>
+            </div>
+            
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#" class="nav__link btn--home">Home</a></li>
+                <li class="nav__item"><a href="{% url 'logout_view' %}" class="nav__link link--login">Cerrar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-wrapper">
+        <aside>
+            <div class="menu-lateral__contenido">
+                <ul class="menu-lateral__list">
+                    <li class="menu-lateral__items" ><a href="{% url 'inventory' %}" class="menu-lateral__links">Inventario</a></li>
+                    <li class="menu-lateral__items"><a href="{% url 'products' %}" class="menu-lateral__links"> Productos </a></li>
+                    <li class="menu-lateral__items"><a href="{% url 'ventas' %}" class="menu-lateral__links"> Ventas</a></li>
+                    <li class="menu-lateral__items"><a href="{% url 'reporte-ventas' %}" class="menu-lateral__links"> Reporte de ventas</a></li>
+                    <li class="menu-lateral__items"><a href="{% url 'users' %}" class="menu-lateral__links"> Usuarios</a></li>
+                </ul>
+                
+            </div>
+            
+        </aside>
+        <div class="main-content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+    </div>
+    
+    
+    
+    
+
+
+        
+</body>
+</html>
