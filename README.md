@@ -1,2 +1,3 @@
-# Punto de venta desarrollado en django por
-#Sebastiav Villarreal y Brian Lopez
+# PUNTO VENTA DJANGO
+Sebastiav Villarreal 
+Brian Lopez
